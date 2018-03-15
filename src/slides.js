@@ -1,5 +1,6 @@
 // Import React
 import React from "react";
+import { Pie } from "react-chartjs";
 
 // Import Spectacle Core tags
 import {
@@ -28,16 +29,16 @@ const images = {
   handtalk: require("./images/handtalk.svg")
 };
 
+const data = [
+  { value: 60, color: "#F7464A", label: "Iniciante" },
+  { value: 30, color: "#46BFBD", label: "Senior" },
+  { value: 10, color: "#FDB45C", label: "Avançado" }
+];
+
 export default [
   // Capa
-  // <Heading size={1} textColor="primary">
-  //   Node.js Overview
-  // </Heading>
-  <Slide
-    transition={["zoom"]}
-    bgColor="#333"
-    notes="Quem sou eu, onde trabalho, credenciais, links"
-  >
+  <Slide transition={["zoom"]} bgColor="#333">
+    <Notes>Quem sou eu, onde trabalho, credenciais, links</Notes>
     <Image src={images.node} />
   </Slide>,
 
@@ -84,20 +85,33 @@ export default [
     </Layout>
   </Slide>,
 
-  // Estrutura da apresentaçao
+  // Demografia
   <Slide>
-    <Layout>
-      <Fill />
-      <Fill>
-        <List>
-          <Text textSize={35}>Como surgiu o Node.js?</Text>
-          <Text textSize={35}>O que é Node.js?</Text>
-          <Text textSize={35}>Como usar Node.js?</Text>
-          <Text textSize={35}>Onde usar Node.js?</Text>
-        </List>
-      </Fill>
-    </Layout>
+    <Heading textSize={80}>Demografia</Heading>
+    <br />
+    <Pie
+      data={data}
+      options={{ animateRotate: false }}
+      width="350"
+      height="380"
+    />
+    {data.map(d => (
+      <Code textColor="white" bgColor={d.color} style={{ margin: 4 }}>
+        {d.label}
+      </Code>
+    ))}
   </Slide>,
+
+  // Estrutura da apresentaçao
+  // <Slide>
+  //   <Heading fit>Estrutura da Apresentação</Heading>
+  //   <List>
+  //     <ListItem>Como surgiu o Node.js?</ListItem>
+  //     <ListItem>O que é Node.js?</ListItem>
+  //     <ListItem>Como usar Node.js?</ListItem>
+  //     <ListItem>Onde usar Node.js?</ListItem>
+  //   </List>
+  // </Slide>,
 
   // Nascimento do JavaScript
   <Slide>

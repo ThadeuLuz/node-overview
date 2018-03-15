@@ -1,34 +1,32 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import slides from './slides'
-import registerServiceWorker from './registerServiceWorker'
+import React from "react";
+import ReactDOM from "react-dom";
+import slides from "./slides";
+import registerServiceWorker from "./registerServiceWorker";
 
 // Import theme
-import createTheme from 'spectacle/lib/themes/default'
-import { Deck } from 'spectacle'
+import createTheme from "spectacle/lib/themes/default";
+import { Deck } from "spectacle";
 
 // Require CSS
 // eslint-disable-next-line
-require('normalize.css')
+require("normalize.css");
 
 const theme = createTheme(
   {
-    primary: 'white',
-    secondary: '#0D6C0E', // Green
-    tertiary: '#333333' // Dark Gray
+    primary: "#4054B2"
   },
   {
-    primary: 'Helvetica'
-    // primary: "Montserrat",
-    // secondary: "Helvetica"
+    // primary: "Raleway"
+    // secondary: { name: "Limelight", googleFont: true, styles: ["400", "700i"] },
+    primary: { name: "Comfortaa", googleFont: true, styles: ["400", "700i"] }
   }
-)
+);
 
 const Presentation = () => (
-  <Deck transition={['zoom', 'slide']} transitionDuration={200} theme={theme}>
+  <Deck transition={["zoom", "slide"]} transitionDuration={200} theme={theme}>
     {slides}
   </Deck>
-)
+);
 
-ReactDOM.render(<Presentation />, document.getElementById('root'))
-registerServiceWorker()
+ReactDOM.render(<Presentation />, document.getElementById("root"));
+registerServiceWorker();

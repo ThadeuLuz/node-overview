@@ -1,9 +1,11 @@
 // Import React
 import React from "react";
 import { Pie } from "react-chartjs";
+import packageJson from "./package";
 
 // Import Spectacle Core tags
 import {
+  Appear,
   BlockQuote,
   Cite,
   Deck,
@@ -21,12 +23,21 @@ import {
   Layout,
   Fill
 } from "spectacle";
+import slide from "spectacle/lib/components/slide";
 
 const images = {
   node: require("./images/node_logo.svg"),
   me: require("./images/me.jpg"),
   gde: require("./images/gde.svg"),
-  handtalk: require("./images/handtalk.svg")
+  handtalk: require("./images/handtalk.svg"),
+  netscape: require("./images/netscape.svg"),
+  chrome: require("./images/chrome.svg"),
+  v8: require("./images/V8.svg"),
+  browserjs: require("./images/browserjs.gif"),
+  termjs: require("./images/termjs.gif"),
+  bestFriend: require("./images/bestFriend.gif"),
+  nodeLogo: require("./images/nodelogo.png"),
+  npmLogo: require("./images/npm.png")
 };
 
 const data = [
@@ -102,85 +113,93 @@ export default [
     ))}
   </Slide>,
 
-  // Estrutura da apresentaçao
-  // <Slide>
-  //   <Heading fit>Estrutura da Apresentação</Heading>
-  //   <List>
-  //     <ListItem>Como surgiu o Node.js?</ListItem>
-  //     <ListItem>O que é Node.js?</ListItem>
-  //     <ListItem>Como usar Node.js?</ListItem>
-  //     <ListItem>Onde usar Node.js?</ListItem>
-  //   </List>
-  // </Slide>,
-
-  // Nascimento do JavaScript
+  // Surgimento do JavaScript
   <Slide>
     <Notes>
       Como começou o javascript. LiveScript, mas pra pegar carona java,
       javascript em 10 dias. Fácil de usar.
     </Notes>
-    <Heading fit>1995 - Brendan Eich Netscape</Heading>
+    <Image src={images.netscape} width="400" />
+    <Heading fit>Surgimento do JavaScript</Heading>
     <List>
-      <ListItem>Brendan Eich on Netscape em 1995</ListItem>
+      <ListItem>Criado por Brendan Eich em 1995</ListItem>
       <ListItem>Chumbeta do Java</ListItem>
       <ListItem>Fácil de usar, para iniciantes</ListItem>
       <ListItem>Padronizado (ECMA)</ListItem>
-      <ListItem>Feito em 10 dias</ListItem>
+      <ListItem>Construída em 10 dias</ListItem>
     </List>
   </Slide>,
 
-  // Nascimento do Chrome/V8
+  // Surgimento do Chrome/V8
   <Slide>
-    <Notes>Em 2008 nasce o Google Chrome</Notes>
-    <Heading fit>2008 - Nascimento do Google Chrome e V8</Heading>
+    <Notes>Surgimento do Chrome...</Notes>
+    <Image src={images.chrome} width="150" />
+    <br />
+    <Heading textSize={70}>Surgimento do Chrome</Heading>
     <List>
+      <ListItem>Criado pelo Google em 2008</ListItem>
       <ListItem>Navegador "sem frisos"</ListItem>
-      <ListItem>Muito rápido</ListItem>
+      <ListItem>Para sites mais pesados (Gmail)</ListItem>
     </List>
   </Slide>,
 
   // ...e do V8
   <Slide>
+    <Image src={images.v8} width="150" />
+    <Heading textSize={70}>...e do Chrome V8</Heading>
+    <br />
     <List>
-      <ListItem>Gmail estava ficando pesado</ListItem>
+      <ListItem>Novo engine de JavaScript</ListItem>
+      <ListItem>Feito em C++</ListItem>
+      <ListItem>Muito rápido!</ListItem>
     </List>
   </Slide>,
 
-  // Nascimento do Node.js
+  // Testar o V8
+  <Slide bgImage={images.browserjs} />,
+
+  // Surgimento do Node.js
   <Slide>
-    <Heading fit>2009 - Nascimento do Node.js</Heading>
-    <List>
-      <ListItem>Ryan Dahl na JSConf 2009</ListItem>
-      <ListItem>Server Side JavaScript</ListItem>
-      <ListItem>Em cima do V8</ListItem>
-      <ListItem>CommonJS modules</ListItem>
-    </List>
     <iframe
-      width="560"
-      height="315"
+      width="380"
+      height="215"
       src="https://www.youtube.com/embed/ztspvPYybIY"
       frameborder="0"
       allow="autoplay; encrypted-media"
       allowfullscreen
     />
-  </Slide>,
-
-  // O que é o Node.js
-  <Slide>
-    <Heading fit>O que é o Node.js</Heading>
+    <br />
+    <Heading textSize={70}>Surgimento do Node.js</Heading>
     <List>
-      <ListItem>JavaScript Para servidor</ListItem>
-      <ListItem>É um software baseado em V8</ListItem>
-      <ListItem>I/O assíncrono</ListItem>
-      <ListItem>Baixar e instalar em nodejs.org</ListItem>
+      <ListItem>Ryan Dahl na JSConf 2009</ListItem>
+      <ListItem>Standalone V8</ListItem>
+      <ListItem>Fs, http, process</ListItem>
+      <ListItem>CommonJS modules</ListItem>
+      <ListItem>Feito para servidor 😏</ListItem>
     </List>
   </Slide>,
 
-  // Como usar o Node
+  // Testar o console
+  <Slide bgImage={images.termjs} />,
+
+  // NPM
   <Slide>
-    <Heading fit>
-      NPM é o gerenciador de pacotes do node, e seu melhor amigo.
-    </Heading>
+    <Layout
+      style={{
+        backgroundImage: `url('${images.bestFriend}')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: 300,
+        width: 400,
+        margin: "auto"
+      }}
+    >
+      <Image src={images.nodeLogo} height={100} />
+      <Fill />
+      <Image src={images.npmLogo} height={80} />
+    </Layout>
+    <br />
+    <Heading textSize={70}>NPM: seu melhor amigo</Heading>
     <List>
       <ListItem>Package.json</ListItem>
       <ListItem>Prioridade local</ListItem>
@@ -189,9 +208,16 @@ export default [
     </List>
   </Slide>,
 
+  //
+  <Slide>
+    <Heading textSize={70}>Pacotes</Heading>
+    <CodePane lang="js" textSize={18} source={"// $ npm init"} />
+    <CodePane lang="json" textSize={18} source={packageJson} />
+  </Slide>,
+
   // Criando um projeto e instalando pacotes
   <Slide>
-    <Heading fit>Projetos</Heading>
+    <Heading textSize={70}>Projetos</Heading>
     <List>
       <ListItem>Importando</ListItem>
       <ListItem>Linha de comando</ListItem>

@@ -26,7 +26,7 @@ import {
 import slide from "spectacle/lib/components/slide";
 
 const images = {
-  node: require("./images/node_logo.svg"),
+  node: require("./images/node_full.jpeg"),
   me: require("./images/me.jpg"),
   gde: require("./images/gde.svg"),
   handtalk: require("./images/handtalk.svg"),
@@ -37,21 +37,31 @@ const images = {
   termjs: require("./images/termjs.gif"),
   bestFriend: require("./images/bestFriend.gif"),
   nodeLogo: require("./images/nodelogo.png"),
-  npmLogo: require("./images/npm.png")
+  npmLogo: require("./images/npm.png"),
+  ie: require("./images/ie.jpg"),
+  mc: require("./images/modulecounts.png"),
+  server: require("./images/logos/Server.png"),
+  web: require("./images/logos/Web.png"),
+  desktop: require("./images/logos/Desktop.png"),
+  mobile: require("./images/logos/Mobile.png"),
+  iot: require("./images/logos/IOT.png"),
+  misc: require("./images/logos/Misc.png"),
+  prefinal: require("./images/logos/PreFinal.png"),
+  final: require("./images/logos/Final.png")
 };
 
 const data = [
-  { value: 60, color: "#F7464A", label: "Iniciante" },
+  { value: 10, color: "#FDB45C", label: "Avançado" },
   { value: 30, color: "#46BFBD", label: "Senior" },
-  { value: 10, color: "#FDB45C", label: "Avançado" }
+  { value: 60, color: "#F7464A", label: "Iniciante" }
 ];
 
 export default [
   // Capa
-  <Slide transition={["zoom"]} bgColor="#333">
-    <Notes>Quem sou eu, onde trabalho, credenciais, links</Notes>
-    <Image src={images.node} />
-  </Slide>,
+  <Slide
+    bgImage={images.node}
+    notes="Quem sou eu, onde trabalho, credenciais, links"
+  />,
 
   // Introdução a apresentação
   <Slide bgImage={images.me} bgDarken={0.25}>
@@ -97,7 +107,7 @@ export default [
   </Slide>,
 
   // Demografia
-  <Slide>
+  <Slide bgColor="black" notes="Falar sobre a demografia da palestra">
     <Heading textSize={80}>Demografia</Heading>
     <br />
     <Pie
@@ -128,6 +138,10 @@ export default [
       <ListItem>Padronizado (ECMA)</ListItem>
       <ListItem>Construída em 10 dias</ListItem>
     </List>
+  </Slide>,
+
+  <Slide>
+    <Image src={images.ie} style={{ padding: 0, margin: 0 }} />
   </Slide>,
 
   // Surgimento do Chrome/V8
@@ -184,6 +198,8 @@ export default [
 
   // NPM
   <Slide>
+    <Heading textSize={70}>NPM: seu melhor amigo</Heading>
+    <Code>$ npm init</Code>
     <Layout
       style={{
         backgroundImage: `url('${images.bestFriend}')`,
@@ -198,57 +214,68 @@ export default [
       <Fill />
       <Image src={images.npmLogo} height={80} />
     </Layout>
-    <br />
-    <Heading textSize={70}>NPM: seu melhor amigo</Heading>
-    <List>
-      <ListItem>Package.json</ListItem>
-      <ListItem>Prioridade local</ListItem>
-      <ListItem>Commandos padronizados</ListItem>
-      <ListItem>Muitos pacotes</ListItem>
-    </List>
   </Slide>,
 
-  //
+  // Package.json
   <Slide>
-    <Heading textSize={70}>Pacotes</Heading>
-    <CodePane lang="js" textSize={18} source={"// $ npm init"} />
+    <CodePane lang="js" textSize={18} source={"// package.json"} />
     <CodePane lang="json" textSize={18} source={packageJson} />
   </Slide>,
 
-  // Criando um projeto e instalando pacotes
-  <Slide>
-    <Heading textSize={70}>Projetos</Heading>
-    <List>
-      <ListItem>Importando</ListItem>
-      <ListItem>Linha de comando</ListItem>
-      <ListItem>global</ListItem>
-    </List>
-  </Slide>,
-
-  // Onde usar o node
-  <Slide>
-    <Heading fit>Onde usar o node?</Heading>
-    <List>
-      <ListItem>Back-end</ListItem>
-      <ListItem>Front-end</ListItem>
-    </List>
+  // Module counts
+  <Slide bgColor={"tertiary"}>
+    <Image src={images.mc} />
   </Slide>,
 
   // Diversos outros projetos
   <Slide>
-    <Heading fit>Onde usar esses pacotes</Heading>
-    <List>
-      <ListItem>Server</ListItem>
-      <ListItem>Mobile</ListItem>
-      <ListItem>Desktop</ListItem>
-      <ListItem>IoT</ListItem>
-      <ListItem>Web</ListItem>
-      <ListItem>APIs</ListItem>
-    </List>
+    <Heading fit>Onde usar esses Pacotes?</Heading>
+  </Slide>,
+
+  // Server
+  <Slide bgColor={"tertiary"} transition={["fade"]}>
+    <Image src={images.server} />
+  </Slide>,
+
+  // Web
+  <Slide bgColor={"tertiary"} transition={["fade"]}>
+    <Image src={images.web} />
+  </Slide>,
+
+  // Desktop
+  <Slide bgColor={"tertiary"} transition={["fade"]}>
+    <Image src={images.desktop} />
+  </Slide>,
+
+  // Mobile
+  <Slide bgColor={"tertiary"} transition={["fade"]}>
+    <Image src={images.mobile} />
+  </Slide>,
+
+  // IOT
+  <Slide bgColor={"tertiary"} transition={["fade"]}>
+    <Image src={images.iot} />
+  </Slide>,
+
+  // Misc
+  <Slide bgColor={"tertiary"} transition={["fade"]}>
+    <Image src={images.misc} />
+  </Slide>,
+
+  // PreFinal
+  <Slide bgColor={"tertiary"} transition={["fade"]}>
+    <Image src={images.prefinal} />
+  </Slide>,
+
+  // PreFinal
+  <Slide bgColor={"tertiary"} transition={["fade"]}>
+    <Image src={images.final} />
   </Slide>,
 
   // Good bye
-  <Slide>
-    <Heading fit>Thank you</Heading>
+  <Slide bgColor="black" transition={["fade"]}>
+    <Heading fit textFont="Lobster Two">
+      Obrigado
+    </Heading>
   </Slide>
 ];

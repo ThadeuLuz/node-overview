@@ -11,19 +11,33 @@ import { Deck } from "spectacle";
 // eslint-disable-next-line
 require("normalize.css");
 
+// const theme = createTheme(
+//   {
+//     primary: "#4054B2"
+//   },
+//   {
+//     // primary: "Raleway"
+//     // secondary: { name: "Limelight", googleFont: true, styles: ["400", "700"] },
+//     primary: { name: "Comfortaa", googleFont: true, styles: ["400", "700"] }
+//   }
+// );Lobster+Two:400,700
+
 const theme = createTheme(
   {
-    primary: "#4054B2"
+    primary: "#F7464A"
   },
   {
-    // primary: "Raleway"
-    // secondary: { name: "Limelight", googleFont: true, styles: ["400", "700i"] },
-    primary: { name: "Comfortaa", googleFont: true, styles: ["400", "700i"] }
+    primary: {
+      name: "Open Sans Condensed",
+      googleFont: true,
+      styles: ["300", "700"]
+    },
+    secondary: { name: "Lobster Two", googleFont: true, styles: ["400", "700"] }
   }
 );
 
 const Presentation = () => (
-  <Deck transition={["zoom", "slide"]} transitionDuration={200} theme={theme}>
+  <Deck transition={["slide", "fade"]} transitionDuration={500} theme={theme}>
     {slides}
   </Deck>
 );

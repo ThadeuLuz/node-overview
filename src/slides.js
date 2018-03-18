@@ -5,25 +5,18 @@ import packageJson from "./package";
 
 // Import Spectacle Core tags
 import {
-  Appear,
-  BlockQuote,
-  Cite,
-  Deck,
   Heading,
   ListItem,
   List,
-  Quote,
   Slide,
   Text,
   Notes,
-  MarkdownSlides,
   CodePane,
   Code,
   Image,
   Layout,
   Fill
 } from "spectacle";
-import slide from "spectacle/lib/components/slide";
 
 const images = {
   node: require("./images/node_full.jpeg"),
@@ -40,14 +33,14 @@ const images = {
   npmLogo: require("./images/npm.png"),
   ie: require("./images/ie.jpg"),
   mc: require("./images/modulecounts.png"),
-  server: require("./images/logos/Server.png"),
-  web: require("./images/logos/Web.png"),
-  desktop: require("./images/logos/Desktop.png"),
-  mobile: require("./images/logos/Mobile.png"),
-  iot: require("./images/logos/IOT.png"),
-  misc: require("./images/logos/Misc.png"),
-  prefinal: require("./images/logos/PreFinal.png"),
-  final: require("./images/logos/Final.png")
+  server: require("./images/logos/Server.jpg"),
+  web: require("./images/logos/Web.jpg"),
+  desktop: require("./images/logos/Desktop.jpg"),
+  mobile: require("./images/logos/Mobile.jpg"),
+  iot: require("./images/logos/IOT.jpg"),
+  misc: require("./images/logos/Misc.jpg"),
+  prefinal: require("./images/logos/PreFinal.jpg"),
+  final: require("./images/logos/Final.jpg")
 };
 
 const data = [
@@ -140,6 +133,7 @@ export default [
     </List>
   </Slide>,
 
+  // IE horrível
   <Slide>
     <Image src={images.ie} style={{ padding: 0, margin: 0 }} />
   </Slide>,
@@ -175,6 +169,7 @@ export default [
   // Surgimento do Node.js
   <Slide>
     <iframe
+      title="node-presentation"
       width="380"
       height="215"
       src="https://www.youtube.com/embed/ztspvPYybIY"
@@ -189,7 +184,12 @@ export default [
       <ListItem>Standalone V8</ListItem>
       <ListItem>Fs, http, process</ListItem>
       <ListItem>CommonJS modules</ListItem>
-      <ListItem>Feito para servidor 😏</ListItem>
+      <ListItem>
+        Feito para servidor{" "}
+        <span role="img" aria-label="not really">
+          😏
+        </span>
+      </ListItem>
     </List>
   </Slide>,
 
@@ -223,7 +223,7 @@ export default [
   </Slide>,
 
   // Module counts
-  <Slide bgColor={"tertiary"}>
+  <Slide bgColor={"tertiary"} progressColor={"primary"}>
     <Image src={images.mc} />
   </Slide>,
 
@@ -233,42 +233,42 @@ export default [
   </Slide>,
 
   // Server
-  <Slide bgColor={"tertiary"} transition={["fade"]}>
+  <Slide bgColor={"tertiary"} progressColor={"primary"} transition={["fade"]}>
     <Image src={images.server} />
   </Slide>,
 
   // Web
-  <Slide bgColor={"tertiary"} transition={["fade"]}>
+  <Slide bgColor={"tertiary"} progressColor={"primary"} transition={["fade"]}>
     <Image src={images.web} />
   </Slide>,
 
   // Desktop
-  <Slide bgColor={"tertiary"} transition={["fade"]}>
+  <Slide bgColor={"tertiary"} progressColor={"primary"} transition={["fade"]}>
     <Image src={images.desktop} />
   </Slide>,
 
   // Mobile
-  <Slide bgColor={"tertiary"} transition={["fade"]}>
+  <Slide bgColor={"tertiary"} progressColor={"primary"} transition={["fade"]}>
     <Image src={images.mobile} />
   </Slide>,
 
   // IOT
-  <Slide bgColor={"tertiary"} transition={["fade"]}>
+  <Slide bgColor={"tertiary"} progressColor={"primary"} transition={["fade"]}>
     <Image src={images.iot} />
   </Slide>,
 
   // Misc
-  <Slide bgColor={"tertiary"} transition={["fade"]}>
+  <Slide bgColor={"tertiary"} progressColor={"primary"} transition={["fade"]}>
     <Image src={images.misc} />
   </Slide>,
 
   // PreFinal
-  <Slide bgColor={"tertiary"} transition={["fade"]}>
+  <Slide bgColor={"tertiary"} progressColor={"primary"} transition={["fade"]}>
     <Image src={images.prefinal} />
   </Slide>,
 
   // PreFinal
-  <Slide bgColor={"tertiary"} transition={["fade"]}>
+  <Slide bgColor={"tertiary"} progressColor={"primary"} transition={["fade"]}>
     <Image src={images.final} />
   </Slide>,
 

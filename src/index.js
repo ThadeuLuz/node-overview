@@ -8,19 +8,7 @@ import createTheme from "spectacle/lib/themes/default";
 import { Deck } from "spectacle";
 
 // Require CSS
-// eslint-disable-next-line
 require("normalize.css");
-
-// const theme = createTheme(
-//   {
-//     primary: "#4054B2"
-//   },
-//   {
-//     // primary: "Raleway"
-//     // secondary: { name: "Limelight", googleFont: true, styles: ["400", "700"] },
-//     primary: { name: "Comfortaa", googleFont: true, styles: ["400", "700"] }
-//   }
-// );Lobster+Two:400,700
 
 const theme = createTheme(
   {

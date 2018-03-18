@@ -1,7 +1,8 @@
 {
-  "name": "talk-node-overview",
+  "name": "node-overview",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://thadeuluz.github.io/node-overview",
   "dependencies": {
     "ajv": "^6.2.1",
     "chart.js": "^1.1.1",

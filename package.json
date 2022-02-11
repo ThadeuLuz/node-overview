@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://thadeuluz.github.io/node-overview",
   "dependencies": {
-    "ajv": "^6.2.1",
+    "ajv": "^6.12.3",
     "chart.js": "^1.1.1",
     "react": "^16.2.0",
     "react-chartjs": "^1.2.0",

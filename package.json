@@ -9,7 +9,7 @@
     "react": "^16.2.0",
     "react-chartjs": "^1.2.0",
     "react-dom": "^16.2.0",
-    "spectacle-scripts": "2.0.0"
+    "spectacle-scripts": "2.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
